@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Registration</title>
+    <style>
+      /* Basic styles for the Blood Donation Registration Page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #d32f2f;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#registration {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #b71c1c;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.socials li {
+    margin: 0 10px;
+}
+
+.socials img {
+    width: 24px;
+    height: 24px;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+    </style>
+    <script>
+      // JavaScript for handling form submission
+document.getElementById('donorRegistrationForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const bloodGroup = document.getElementById('bloodGroup').value;
+    const contactNumber = document.getElementById('contactNumber').value;
+    const password = document.getElementById('password').value;
+    const address = document.getElementById('address').value;
+
+    alert(`Thank you, ${fullName}, for registering as a blood donor! We will contact you soon.`);
+    console.log({ fullName, email, bloodGroup, contactNumber,password, address });
+});
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Blood Donation Registration</h1>
+    </header>
+
+    <!-- Registration Form Section -->
+    <section id="registration">
+        <h2>Register as a Blood Donor</h2>
+        <p>Your contribution can save lives. Please fill out the form below to register as a donor.</p>
+        <form action="register.php" method="POST">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bloodGroup">Blood Group:</label>
+                <select id="bloodGroup" name="bloodGroup" required>
+                    <option value="">Select your blood group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="contactNumber">Contact Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your contact number" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password"id="password"name="password"placeholder="enter your password"required>
+            </div> 
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" placeholder="Enter your address" rows="3" required></textarea>
+            </div>
+
+            <button type="submit" name="submit">Register</button>
+
+        </form>
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h3>Blood Donation Portal</h3>
+            <p>Connecting blood donors with those in need, because every drop counts.</p>
+            <ul class="socials">
+                <li><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/facebook-new.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/twitter-squared.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/instagram-new.png" alt="Instagram"></a></li>
+                <li><a href="#"><img src="https://img.icons8.com/material-outlined/24/000000/linkedin.png" alt="LinkedIn"></a></li>
+            </ul>
+            <p>&copy; 2024 Blood Donation Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
